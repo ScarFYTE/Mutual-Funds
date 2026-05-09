@@ -2,10 +2,11 @@
 #include "../Utils/ColorScheme.h"
 
 namespace ProTrack {
+using namespace UI;
 
 GUIManager::GUIManager()
     : window(sf::VideoMode(800, 600), "ProTrack - Investment & Market Analytics", sf::Style::Close),
-      currentScreen(AppScreen::LOGIN), showNotification(false) {
+      currentScreen(AppScreen::LOGIN), notificationVisible(false) {
     window.setFramerateLimit(60);
 }
 
@@ -43,9 +44,6 @@ bool GUIManager::initialize() {
         }
     }
 
-    // Initialize static screen references
-    Screen::font = &mainFont;
-
     // Setup notification UI
     notificationText.setFont(mainFont);
     notificationText.setCharacterSize(13);
@@ -55,6 +53,10 @@ bool GUIManager::initialize() {
     notificationBg.setFillColor(sf::Color(0, 0, 0, 180));
 
     return true;
+}
+
+sf::Font* GUIManager::getMainFont() {
+    return &mainFont;
 }
 
 void GUIManager::registerScreen(Screen* screen) {
@@ -96,14 +98,14 @@ void GUIManager::update(float dt) {
     // Update notification timer
     if (Screen::notificationTimer > 0) {
         Screen::notificationTimer -= dt;
-        showNotification = true;
+        notificationVisible = true;
         notificationText.setString(Screen::notification);
         sf::FloatRect tb = notificationText.getLocalBounds();
         notificationBg.setSize(sf::Vector2f(tb.width + 40, 32));
         notificationBg.setPosition(400 - (tb.width + 40) / 2, 560);
         notificationText.setPosition(400 - tb.width / 2, 565);
     } else {
-        showNotification = false;
+        notificationVisible = false;
     }
 
     auto it = screens.find(currentScreen);
@@ -121,7 +123,7 @@ void GUIManager::render() {
     }
 
     // Notification overlay
-    if (showNotification) {
+    if (notificationVisible) {
         window.draw(notificationBg);
         window.draw(notificationText);
     }

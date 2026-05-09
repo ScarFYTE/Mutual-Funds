@@ -6,6 +6,7 @@
 #include <iomanip>
 
 namespace ProTrack {
+using namespace UI;
 
 PerformanceScreen::PerformanceScreen(sf::Font* font)
     : Screen(font, "Performance", AppScreen::PERFORMANCE) {

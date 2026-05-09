@@ -5,6 +5,7 @@
 #include "../Utils/ColorScheme.h"
 
 namespace ProTrack {
+using namespace UI;
 
 LoginScreen::LoginScreen(sf::Font* font)
     : Screen(font, "Login", AppScreen::LOGIN) {

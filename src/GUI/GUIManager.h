@@ -10,6 +10,7 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 #include <memory>
+#include <string>
 #include "Screen.h"
 
 namespace ProTrack {
@@ -23,13 +24,14 @@ private:
     sf::Clock deltaClock;
     sf::Text notificationText;
     sf::RectangleShape notificationBg;
-    bool showNotification;
+    bool notificationVisible;
 
 public:
     GUIManager();
     ~GUIManager();
 
     bool initialize();
+    sf::Font* getMainFont();
     void registerScreen(Screen* screen);
     void run();
 
