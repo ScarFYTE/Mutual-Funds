@@ -122,65 +122,65 @@ void FundManager::loadDefaultFunds() {
     // Clear any existing funds first
     funds.clear();
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         101, "IBA Alpha Growth Fund", 125.50,
         FundCategory::EQUITY, RiskLevel::HIGH,
         "Large-cap equity fund focused on high-growth technology and healthcare sectors",
-        1.25, 850.0));
+        1.25, 850.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         102, "Karachi Tech ETF", 48.75,
         FundCategory::INDEX, RiskLevel::MODERATE,
         "Passively tracks the KSE-100 Technology Index",
-        0.50, 420.0));
+        0.50, 420.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         103, "Pakistan Sovereign Bond Fund", 15.20,
         FundCategory::DEBT, RiskLevel::LOW,
         "Invests in government bonds and treasury bills for stable returns",
-        0.75, 1200.0));
+        0.75, 1200.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         104, "Global Emerging Markets Fund", 82.40,
         FundCategory::INTERNATIONAL, RiskLevel::VERY_HIGH,
         "Exposure to BRIC economies and frontier markets",
-        2.00, 350.0));
+        2.00, 350.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         105, "Balanced Allocation Fund", 35.90,
         FundCategory::HYBRID, RiskLevel::MODERATE,
         "60% equity and 40% debt mix for balanced risk-return profile",
-        1.50, 680.0));
+        1.50, 680.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         106, "Energy Sector Fund", 58.30,
         FundCategory::SECTORAL, RiskLevel::HIGH,
         "Concentrated exposure to oil, gas, and renewable energy companies",
-        1.80, 290.0));
+        1.80, 290.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         107, "Dividend Aristocrats Fund", 72.15,
         FundCategory::EQUITY, RiskLevel::MODERATE,
         "Invests in companies with 10+ years of consistent dividend growth",
-        1.10, 560.0));
+        1.10, 560.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         108, "Short Term Income Fund", 10.05,
         FundCategory::DEBT, RiskLevel::LOW,
         "Low-duration debt instruments for capital preservation",
-        0.40, 2100.0));
+        0.40, 2100.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         109, "Asia Pacific Ex-Japan Fund", 95.60,
         FundCategory::INTERNATIONAL, RiskLevel::HIGH,
         "Exposure to China, India, South Korea, and ASEAN markets",
-        1.90, 180.0));
+        1.90, 180.0)));
 
-    funds.emplace_back(new MutualFund(
+    funds.emplace_back(std::unique_ptr<MutualFund>(new MutualFund(
         110, "Smart Beta Fund", 42.80,
         FundCategory::HYBRID, RiskLevel::MODERATE,
         "Factor-based investing combining value, momentum, and quality signals",
-        1.35, 310.0));
+        1.35, 310.0)));
 }
 
 } // namespace ProTrack
