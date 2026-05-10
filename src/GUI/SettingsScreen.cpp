@@ -3,10 +3,12 @@
 #include "../Core/FundManager.h"
 #include "../Data/FilePersistence.h"
 #include "../Utils/ColorScheme.h"
+#include "../Utils/Panel.h"
 #include <sstream>
 #include <iomanip>
 
 namespace ProTrack {
+using namespace UI;
 
 SettingsScreen::SettingsScreen(sf::Font* font)
     : Screen(font, "Settings", AppScreen::SETTINGS), selectedSaveIndex(-1) {

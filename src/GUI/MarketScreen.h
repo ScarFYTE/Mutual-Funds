@@ -7,6 +7,8 @@
 
 namespace ProTrack {
 
+class MutualFund;
+
 class MarketScreen : public Screen {
 private:
     UI::Button* backButton;

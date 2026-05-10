@@ -49,7 +49,7 @@ int main() {
     }
 
     // Create font reference for screens
-    sf::Font* appFont = Screen::font;
+    sf::Font* appFont = gui.getMainFont();
 
     // Create and register all screens
     LoginScreen* loginScreen = new LoginScreen(appFont);

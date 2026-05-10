@@ -2,10 +2,12 @@
 #include "../Core/Investor.h"
 #include "../Core/FundManager.h"
 #include "../Utils/ColorScheme.h"
+#include "../Utils/Panel.h"
 #include <sstream>
 #include <iomanip>
 
 namespace ProTrack {
+using namespace UI;
 
 DashboardScreen::DashboardScreen(sf::Font* font)
     : Screen(font, "Dashboard", AppScreen::DASHBOARD), dayCounter(1) {

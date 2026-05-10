@@ -3,10 +3,12 @@
 #include "../Core/FundManager.h"
 #include "../Core/MutualFund.h"
 #include "../Utils/ColorScheme.h"
+#include "../Utils/Panel.h"
 #include <sstream>
 #include <iomanip>
 
 namespace ProTrack {
+using namespace UI;
 
 PortfolioScreen::PortfolioScreen(sf::Font* font)
     : Screen(font, "Portfolio", AppScreen::PORTFOLIO), selectedFundID(-1), scrollOffset(0) {

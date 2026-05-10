@@ -22,7 +22,7 @@ public:
     ~LoginScreen();
 
     void handleEvent(const sf::Event& event, const sf::RenderWindow& window) override;
-    void update(float dt) override;
+    void update(float dt, const sf::RenderWindow& window) override;
     void render(sf::RenderWindow& window) override;
     void onEnter() override;
 };
