@@ -2,6 +2,7 @@
 #include "../Core/Investor.h"
 #include "../Core/FundManager.h"
 #include "../Utils/ColorScheme.h"
+#include "../Utils/Panel.h"
 #include <sstream>
 #include <iomanip>
 
