@@ -1,7 +1,9 @@
 #include "ChartRenderer.h"
+#include "Panel.h"
 #include <sstream>
 #include <iomanip>
 #include <algorithm>
+#include <cmath>
 
 namespace ProTrack {
 namespace UI {
